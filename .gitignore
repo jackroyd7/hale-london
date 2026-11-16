@@ -1,0 +1,4 @@
+build/data/london_osm_progress.json
+__pycache__/
+*.pyc
+.DS_Store

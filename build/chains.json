@@ -1,0 +1,520 @@
+{
+ "_source": "Club and studio lists from each brand's own website (thirdspace.london, barrys.com, psyclelondon.com, 1rebel.com), checked 16 Nov 2026; coordinates from postcodes.io (ONS open data).",
+ "chains": [
+  {
+   "brand": "Third Space",
+   "branch": "Battersea",
+   "addr": "Ground Floor, Prospect Way, Battersea Power Station, SW11 8BH",
+   "lat": 51.48038,
+   "lng": -0.14416,
+   "web": "https://www.thirdspace.london/clubs/battersea/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Canary Wharf",
+   "addr": "16-19 Canada Square, E14 5ER",
+   "lat": 51.50458,
+   "lng": -0.01623,
+   "web": "https://www.thirdspace.london/clubs/canary-wharf/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Chelsea",
+   "addr": "19 Mallord Street, SW3 6AP",
+   "lat": 51.48544,
+   "lng": -0.1747,
+   "web": "https://www.thirdspace.london/clubs/chelsea/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "City",
+   "addr": "40 Mark Lane, EC3R 7AT",
+   "lat": 51.51014,
+   "lng": -0.08072,
+   "web": "https://www.thirdspace.london/clubs/city/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Clapham Junction",
+   "addr": "Lavender Hill, SW11 1LN",
+   "lat": 51.46374,
+   "lng": -0.16659,
+   "web": "https://www.thirdspace.london/clubs/clapham-junction/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Islington",
+   "addr": "15 Esther Anne Place, N1 1UL",
+   "lat": 51.53904,
+   "lng": -0.10365,
+   "web": "https://www.thirdspace.london/clubs/islington/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Marylebone",
+   "addr": "Bulstrode Place, W1U 2HU",
+   "lat": 51.51827,
+   "lng": -0.15019,
+   "web": "https://www.thirdspace.london/clubs/marylebone/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Mayfair",
+   "addr": "22 Clarges Street, W1J 5FA",
+   "lat": 51.50756,
+   "lng": -0.14602,
+   "web": "https://www.thirdspace.london/clubs/mayfair/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Moorgate",
+   "addr": "16 South Place, EC2M 2AQ",
+   "lat": 51.51899,
+   "lng": -0.08724,
+   "web": "https://www.thirdspace.london/clubs/moorgate/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Paternoster Square",
+   "addr": "31 Warwick Lane, EC4M 7BW",
+   "lat": 51.51545,
+   "lng": -0.1005,
+   "web": "https://www.thirdspace.london/clubs/paternoster-square/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Queen's Park",
+   "addr": "111 Salusbury Road, NW6 6RG",
+   "lat": 51.53771,
+   "lng": -0.20657,
+   "web": "https://www.thirdspace.london/clubs/queens-park/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Richmond",
+   "addr": "4 Golden Court, TW9 1EU",
+   "lat": 51.46035,
+   "lng": -0.30611,
+   "web": "https://www.thirdspace.london/clubs/richmond/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Soho",
+   "addr": "67 Brewer Street, W1F 9US",
+   "lat": 51.51128,
+   "lng": -0.13568,
+   "web": "https://www.thirdspace.london/clubs/soho/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "The Whiteley",
+   "addr": "The Whiteley, Queensway, W2 4YN",
+   "lat": 51.51458,
+   "lng": -0.18872,
+   "web": "https://www.thirdspace.london/clubs/the-whiteley/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Tower Bridge",
+   "addr": "2b More London Riverside, SE1 2AP",
+   "lat": 51.50529,
+   "lng": -0.08036,
+   "web": "https://www.thirdspace.london/clubs/tower-bridge/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Wimbledon",
+   "addr": "4 Queen's Road, SW19 8YE",
+   "lat": 51.42075,
+   "lng": -0.20477,
+   "web": "https://www.thirdspace.london/clubs/wimbledon/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Third Space",
+   "branch": "Wood Wharf",
+   "addr": "14 Charter Street, E14 5GZ",
+   "lat": 51.50312,
+   "lng": -0.0128,
+   "web": "https://www.thirdspace.london/clubs/wood-wharf/",
+   "sub": "Gym",
+   "aliases": [
+    "third space"
+   ]
+  },
+  {
+   "brand": "Barry's",
+   "sub": "Boutique studio",
+   "aliases": [
+    "barry's",
+    "barrys",
+    "barry’s"
+   ],
+   "branch": "Canary Wharf",
+   "addr": "Level -2, 1 Crossrail Place, E14 5AR",
+   "lat": 51.50613,
+   "lng": -0.01782,
+   "web": "https://www.barrys.com/studio/london-canary-wharf"
+  },
+  {
+   "brand": "Barry's",
+   "sub": "Boutique studio",
+   "aliases": [
+    "barry's",
+    "barrys",
+    "barry’s"
+   ],
+   "branch": "Central",
+   "addr": "163 Euston Road, NW1 2BH",
+   "lat": 51.52709,
+   "lng": -0.13084,
+   "web": "https://www.barrys.com/studio/london-central"
+  },
+  {
+   "brand": "Barry's",
+   "sub": "Boutique studio",
+   "aliases": [
+    "barry's",
+    "barrys",
+    "barry’s"
+   ],
+   "branch": "East",
+   "addr": "2 Worship Street, EC2A 2AH",
+   "lat": 51.52201,
+   "lng": -0.08528,
+   "web": "https://www.barrys.com/studio/london-east"
+  },
+  {
+   "brand": "Barry's",
+   "sub": "Boutique studio",
+   "aliases": [
+    "barry's",
+    "barrys",
+    "barry’s"
+   ],
+   "branch": "Soho",
+   "addr": "59 Kingly Street, W1B 5QL",
+   "lat": 51.51269,
+   "lng": -0.13967,
+   "web": "https://www.barrys.com/studio/london-soho"
+  },
+  {
+   "brand": "Barry's",
+   "sub": "Boutique studio",
+   "aliases": [
+    "barry's",
+    "barrys",
+    "barry’s"
+   ],
+   "branch": "St Paul's",
+   "addr": "33 Gutter Lane, EC2V 8AS",
+   "lat": 51.51522,
+   "lng": -0.09563,
+   "web": "https://www.barrys.com/studio/london-st-pauls"
+  },
+  {
+   "brand": "Psycle",
+   "sub": "Boutique studio",
+   "aliases": [
+    "psycle"
+   ],
+   "branch": "Oxford Circus",
+   "addr": "76 Mortimer Street, W1W 7SA",
+   "lat": 51.51761,
+   "lng": -0.14234,
+   "web": "https://psyclelondon.com/pages/oxford-circus"
+  },
+  {
+   "brand": "Psycle",
+   "sub": "Boutique studio",
+   "aliases": [
+    "psycle"
+   ],
+   "branch": "Bank",
+   "addr": "40 Coleman Street, EC2R 5EH",
+   "lat": 51.51528,
+   "lng": -0.09028,
+   "web": "https://psyclelondon.com/pages/bank"
+  },
+  {
+   "brand": "Psycle",
+   "sub": "Boutique studio",
+   "aliases": [
+    "psycle"
+   ],
+   "branch": "Victoria",
+   "addr": "27 Eccleston Place, SW1W 9NF",
+   "lat": 51.49353,
+   "lng": -0.14821,
+   "web": "https://psyclelondon.com/pages/victoria"
+  },
+  {
+   "brand": "Psycle",
+   "sub": "Boutique studio",
+   "aliases": [
+    "psycle"
+   ],
+   "branch": "London Bridge",
+   "addr": "20-26 London Bridge Street, SE1 9SG",
+   "lat": 51.50496,
+   "lng": -0.08762,
+   "web": "https://psyclelondon.com/pages/london-bridge"
+  },
+  {
+   "brand": "Psycle",
+   "sub": "Boutique studio",
+   "aliases": [
+    "psycle"
+   ],
+   "branch": "Shoreditch",
+   "addr": "17-23 Whitby Street, E1 6JU",
+   "lat": 51.52408,
+   "lng": -0.07484,
+   "web": "https://psyclelondon.com/pages/shoreditch"
+  },
+  {
+   "brand": "Psycle",
+   "sub": "Boutique studio",
+   "aliases": [
+    "psycle"
+   ],
+   "branch": "Clapham",
+   "addr": "82-84 Battersea Rise, SW11 1EH",
+   "lat": 51.46089,
+   "lng": -0.16782,
+   "web": "https://psyclelondon.com/pages/clapham"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "Angel",
+   "addr": "403-405 St John Street, EC1V 4AB",
+   "lat": 51.53129,
+   "lng": -0.10687,
+   "web": "https://www.1rebel.com/en-gb/clubs/angel"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "Bayswater",
+   "addr": "34 Porchester Road, W2 6ES",
+   "lat": 51.51715,
+   "lng": -0.18771,
+   "web": "https://www.1rebel.com/en-gb/clubs/bayswater"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "Broadgate",
+   "addr": "31 Lower Circle, Broadgate Circle, EC2M 2QS",
+   "lat": 51.51884,
+   "lng": -0.08314,
+   "web": "https://www.1rebel.com/en-gb/clubs/broadgate"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "Chelsea",
+   "addr": "107 King's Road, SW3 4PA",
+   "lat": 51.48864,
+   "lng": -0.1653,
+   "web": "https://www.1rebel.com/en-gb/clubs/chelsea"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "Clapham",
+   "addr": "95-97 Clapham High Street, SW4 7TB",
+   "lat": 51.46281,
+   "lng": -0.13449,
+   "web": "https://www.1rebel.com/en-gb/clubs/clapham"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "Euston",
+   "addr": "Lancing Street, NW1 1AD",
+   "lat": 51.52857,
+   "lng": -0.13173,
+   "web": "https://www.1rebel.com/en-gb/clubs/euston"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "High Street Kensington",
+   "addr": "45 Phillimore Walk, W8 7RZ",
+   "lat": 51.49952,
+   "lng": -0.19848,
+   "web": "https://www.1rebel.com/en-gb/clubs/high-street-kensington"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "Holborn",
+   "addr": "Unit 4, The Post Building, Museum Street, WC1A 1JS",
+   "lat": 51.51688,
+   "lng": -0.12502,
+   "web": "https://www.1rebel.com/en-gb/clubs/holborn"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "Leadenhall",
+   "addr": "52 Lime Street, EC3A 3BP",
+   "lat": 51.51344,
+   "lng": -0.07955,
+   "web": "https://www.1rebel.com/en-gb/clubs/leadenhall"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "Oxford Circus",
+   "addr": "9 Holles Street, W1G 0DB",
+   "lat": 51.51588,
+   "lng": -0.14444,
+   "web": "https://www.1rebel.com/en-gb/clubs/oxford-circus"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "South Bank",
+   "addr": "7 Upper Ground, SE1 9LP",
+   "lat": 51.50776,
+   "lng": -0.10595,
+   "web": "https://www.1rebel.com/en-gb/clubs/south-bank"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "St John's Wood",
+   "addr": "51 St John's Wood High Street, NW8 7NJ",
+   "lat": 51.53317,
+   "lng": -0.17065,
+   "web": "https://www.1rebel.com/en-gb/clubs/st-johns-wood"
+  },
+  {
+   "brand": "1Rebel",
+   "sub": "Boutique studio",
+   "aliases": [
+    "1rebel",
+    "1 rebel"
+   ],
+   "branch": "Victoria",
+   "addr": "Nova South, 5 Allington Street, SW1E 5BX",
+   "lat": 51.49721,
+   "lng": -0.14294,
+   "web": "https://www.1rebel.com/en-gb/clubs/victoria"
+  }
+ ]
+}
