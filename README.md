@@ -38,7 +38,7 @@ Everything needed to rebuild `index.html` is in `build/`. You need Python 3; not
 |---|---|
 | `fetch_london_venues.py` | Downloads venues and stations from OpenStreetMap into `data/london_osm.json` |
 | `process_osm.py` | Classifies venues, filters out non-wellness places, parses opening hours, finds boroughs and nearest stations, and merges `chains.json` |
-| `chains.json` | Official club lists for Third Space, Psycle, Barry's and 1Rebel, taken from each brand's website. These correct and complete the OpenStreetMap entries |
+| `chains.json` | Official club lists for Third Space, Psycle, Barry's, 1Rebel and Gymbox, taken from each brand's website. These correct and complete the OpenStreetMap entries |
 | `build.py` | Puts the template, styles, app code and data together into `index.html` |
 | `template.html`, `app.js`, `data.js` | The page layout and styles, the app, and category definitions |
 | `boroughs.min.json`, `simplify.py` | Simplified London borough boundaries and the script that simplified them |
@@ -49,7 +49,7 @@ To add another chain, add its clubs to `chains.json` (brand, type, branch name, 
 ## Credits and data
 
 - Venue data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors, available under the Open Database Licence (ODbL).
-- Club and studio lists for Third Space, Psycle, Barry's and 1Rebel from each brand's own website; locations from [postcodes.io](https://postcodes.io) (ONS open data).
+- Club and studio lists for Third Space, Psycle, Barry's, 1Rebel and Gymbox from each brand's own website; locations from [postcodes.io](https://postcodes.io) (ONS open data).
 - Street maps from [OpenFreeMap](https://openfreemap.org) / [OpenMapTiles](https://www.openmaptiles.org/).
 - Borough boundaries simplified from London Datastore open data.
 - Map libraries in `vendor/`: [Leaflet](https://leafletjs.com), [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster), [MapLibre GL JS](https://maplibre.org) and [MapLibre GL Leaflet](https://github.com/maplibre/maplibre-gl-leaflet), each under its own licence.

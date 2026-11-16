@@ -243,17 +243,29 @@ if _os.path.exists(_chains_path):
         bl = brand.lower()
         aliases = [a.lower() for a in clubs[0].get("aliases", [bl])] + [bl]
         sub_ = clubs[0].get("sub", "Gym")
-        pcs = {c["addr"].rsplit(", ", 1)[-1].replace(" ", "").upper() for c in clubs}
+        pcs = {c["addr"].rsplit(", ", 1)[-1].replace(" ", "").upper() for c in clubs if c.get("addr")}
         def is_cand(v):
             pc = (v.get("addr") or "").rsplit(", ", 1)[-1].replace(" ", "").upper()
             nm_, ch_ = v["name"].lower(), str(v.get("chain", "")).lower()
-            return v["cat"] == "move" and (any(a in nm_ or a in ch_ for a in aliases) or (pc in pcs and bl.split()[0] in nm_))
+            sq = lambda x: re.sub(r"[^a-z0-9]", "", x)
+            return v["cat"] == "move" and (any(sq(a) in sq(nm_) or sq(a) in sq(ch_) for a in aliases) or (pc in pcs and bl.split()[0] in nm_))
         cands = [v for v in venues if is_cand(v)]
         used = set()
-        for c in clubs:
-            best = min((v for v in cands if id(v) not in used), key=lambda v: metres((v["lat"], v["lng"]), (c["lat"], c["lng"])), default=None)
-            if best is not None and metres((best["lat"], best["lng"]), (c["lat"], c["lng"])) < 400:
-                used.add(id(best)); v = best
+        # Pair each official club with the closest unused OSM entry, closest pairs first.
+        pairs = sorted((metres((v["lat"], v["lng"]), (c["lat"], c["lng"])), ci, id(v), v) for ci, c in enumerate(clubs) for v in cands)
+        match = {}
+        for d, ci, vid, v in pairs:
+            if d < 400 and ci not in match and vid not in used:
+                match[ci] = v; used.add(vid)
+        for ci, c in enumerate(clubs):
+            if ci in match:
+                v = match[ci]
+                if metres((v["lat"], v["lng"]), (c["lat"], c["lng"])) > 100:
+                    # OSM point is at a different address: move it, and drop details that belonged to the old spot.
+                    near = min(st_list, key=lambda kv: metres((kv[1][1], kv[1][2]), (c["lat"], c["lng"])))
+                    for k in ("hours", "ohRaw", "phone", "wc", "osm"): v.pop(k, None)
+                    v.update({"lat": c["lat"], "lng": c["lng"], "borough": borough_at(c["lat"], c["lng"]) or v["borough"], "st": near[1][0],
+                              "stWalk": max(1, round(metres((near[1][1], near[1][2]), (c["lat"], c["lng"])) * 1.25 / 80))})
             else:
                 near = min(st_list, key=lambda kv: metres((kv[1][1], kv[1][2]), (c["lat"], c["lng"])))
                 v = {"id": re.sub(r"[^a-z0-9]+", "-", f"{brand} {c['branch']}".lower()).strip("-"), "cat": "move", "sub": sub_,
@@ -261,7 +273,8 @@ if _os.path.exists(_chains_path):
                      "st": near[1][0], "stWalk": max(1, round(metres((near[1][1], near[1][2]), (c["lat"], c["lng"])) * 1.25 / 80)),
                      "needs": SUB_NEEDS.get(sub_, SUB_NEEDS["Gym"])}
                 venues.append(v)
-            v.update({"name": brand, "branch": c["branch"], "addr": c["addr"], "web": c["web"], "chain": brand, "src": brand, "sub": sub_, "needs": SUB_NEEDS.get(sub_, v["needs"])})
+            v.update({"name": brand, "branch": c["branch"], "web": c["web"], "chain": brand, "src": brand, "sub": sub_, "needs": SUB_NEEDS.get(sub_, v["needs"])})
+            if c.get("addr"): v["addr"] = c["addr"]
         removed = [v for v in cands if id(v) not in used]
         for v in removed: venues.remove(v)
         print(f"{brand}: {len(used)} matched in OSM, {len(clubs) - len(used)} added, {len(removed)} OSM entries not on the official list removed")

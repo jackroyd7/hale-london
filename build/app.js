@@ -144,7 +144,7 @@ function matches(v, f){
   if (f.vegan && !(v.vegan || v.sub === "Vegan")) return false;
   if (f.q){
     const hay = [v.name, v.branch, v.sub, v.borough, v.st, v.addr, typeof v.chain === "string" ? v.chain : "", CATEGORIES[v.cat].label, ...v.needs.map(n => NEEDS[n])].join(" ").toLowerCase();
-    const squashed = hay.replace(/[^a-z0-9]/g, "");
+    const squashed = (v.name + " " + (v.branch || "")).toLowerCase().replace(/[^a-z0-9]/g, "");
     if (!f.q.toLowerCase().split(/\s+/).filter(Boolean).every(w => hay.includes(w) || squashed.includes(w.replace(/[^a-z0-9]/g, "")))) return false;
   }
   return true;
@@ -697,15 +697,23 @@ function parseQuery(q){
   if (/open now|right now|\bnow\b/.test(t)){ f.openNow = true; bits.push("open now"); }
   if (/wheelchair|step.?free|accessible/.test(t)){ f.stepFree = true; bits.push("step-free"); }
   if (/independent|not a chain/.test(t)){ f.indie = true; bits.push("independent"); }
+  let nearBranch = null;
   // A venue or brand name in the request ("Third Space near Bank") becomes a name search.
   const GENERIC = new Set(["the gym", "gym", "yoga", "spa", "sauna", "pilates", "physio", "physiotherapy", "fitness", "the yoga studio", "health food"]);
   let nameHit = null;
   const plain = x => x.replace(/['’]/g, "");
   const tp = plain(t);
   for (const n of VENUE_NAMES){ if (n.length >= 5 && !GENERIC.has(n) && (n.includes(" ") || n.length >= 7 || CHAIN_NAMES.has(n)) && new RegExp("\\b" + plain(n).replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b").test(tp) && (!nameHit || n.length > nameHit.length)) nameHit = n; }
+  if (!nameHit){ const tsq = tp.replace(/[^a-z0-9]/g, ""); for (const n of CHAIN_NAMES){ const nsq = n.replace(/[^a-z0-9]/g, ""); if (nsq.length >= 5 && !GENERIC.has(n) && tsq.includes(nsq) && (!nameHit || n.length > nameHit.length)) nameHit = n; } }
   if (nameHit){
-    const br = VENUES.filter(v => v.branch && (v.name.toLowerCase() === nameHit || (typeof v.chain === "string" && v.chain.toLowerCase() === nameHit))).map(v => v.branch).find(b => { const bl = plain(b.toLowerCase()); return tp.includes(bl) && !new RegExp("(near|by|close to|around|from)\\s+(the\\s+)?" + bl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(tp); });
-    if (br) nameHit = nameHit + " " + br.toLowerCase();
+    const branches = VENUES.filter(v => v.branch && (v.name.toLowerCase() === nameHit || (typeof v.chain === "string" && v.chain.toLowerCase() === nameHit)));
+    const esc2 = x => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const said = branches.filter(v => tp.includes(plain(v.branch.toLowerCase()))).sort((a, b) => b.branch.length - a.branch.length)[0];
+    if (said){
+      const bl = plain(said.branch.toLowerCase());
+      if (new RegExp("(near|by|close to|around|from)\\s+(the\\s+)?" + esc2(bl)).test(tp)) nearBranch = said;
+      else nameHit = nameHit + " " + bl;
+    }
   }
   if (nameHit){ f.q = nameHit; f.subs = []; f.cats = []; f.needs = []; f.vegan = false; bits.length = 0; bits.push("places called “" + (VENUES.find(v => nameHit.startsWith(v.name.toLowerCase()) || (typeof v.chain === "string" && nameHit.startsWith(v.chain.toLowerCase()))).name + (nameHit.includes(" ") && !VENUE_NAMES.includes(nameHit) ? " " + nameHit.split(" ").slice(-1)[0].replace(/^./, c => c.toUpperCase()) : "")) + "”"); if (/open now|right now|\bnow\b/.test(t)){ f.openNow = true; bits.push("open now"); } }
   let best = null;
@@ -715,6 +723,7 @@ function parseQuery(q){
   }
   const b = Object.keys(regionOf).find(b => new RegExp("\\b" + b.toLowerCase().replace(/ upon thames| and .*/, "") + "\\b").test(t));
   if (b && (!best || /\bin\b/.test(t.slice(Math.max(0, t.indexOf(b.toLowerCase().split(" ")[0]) - 4))))){ f.borough = b; bits.push("in " + b); }
+  else if (nearBranch && !(best && t.includes(STATIONS[best[0]][0].toLowerCase()) && STATIONS[best[0]][0].length > nearBranch.branch.length)){ origin = {lat: nearBranch.lat, lng: nearBranch.lng, label: nearBranch.name + " " + nearBranch.branch}; bits.push("near " + nearBranch.name + " " + nearBranch.branch); }
   else if (best){ origin = {key: best[0]}; bits.push("near " + STATIONS[best[0]][0]); }
   else for (const r of Object.keys(REGIONS)) if (new RegExp("\\b" + r.toLowerCase() + "\\b").test(t)){ f.region = r; bits.push(r + " London"); break; }
   return { f, origin, bits };

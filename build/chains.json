@@ -1,5 +1,5 @@
 {
- "_source": "Club and studio lists from each brand's own website (thirdspace.london, barrys.com, psyclelondon.com, 1rebel.com), checked 16 Nov 2026; coordinates from postcodes.io (ONS open data).",
+ "_source": "Club and studio lists from each brand's own website (thirdspace.london, barrys.com, psyclelondon.com, 1rebel.com, gymbox.com), checked 16 Nov 2026. Gymbox addresses for Bank, Farringdon, Finsbury Park, Old Street and Westfield London supplied by hand; other Gymbox locations from OpenStreetMap. Coordinates from postcodes.io (ONS open data).",
  "chains": [
   {
    "brand": "Third Space",
@@ -515,6 +515,121 @@
    "lat": 51.49721,
    "lng": -0.14294,
    "web": "https://www.1rebel.com/en-gb/clubs/victoria"
+  },
+  {
+   "brand": "Gymbox",
+   "sub": "Gym",
+   "aliases": [
+    "gymbox"
+   ],
+   "branch": "Bank",
+   "lat": 51.5129,
+   "lng": -0.08771,
+   "web": "https://gymbox.com/gyms/bank/",
+   "addr": "71 Lombard Street, EC3V 9AY"
+  },
+  {
+   "brand": "Gymbox",
+   "sub": "Gym",
+   "aliases": [
+    "gymbox"
+   ],
+   "branch": "Ealing",
+   "lat": 51.51411,
+   "lng": -0.30601,
+   "web": "https://gymbox.com/gyms/ealing/"
+  },
+  {
+   "brand": "Gymbox",
+   "sub": "Gym",
+   "aliases": [
+    "gymbox"
+   ],
+   "branch": "Elephant and Castle",
+   "lat": 51.49468,
+   "lng": -0.09802,
+   "web": "https://gymbox.com/gyms/elephant-and-castle/"
+  },
+  {
+   "brand": "Gymbox",
+   "sub": "Gym",
+   "aliases": [
+    "gymbox"
+   ],
+   "branch": "Farringdon",
+   "lat": 51.51893,
+   "lng": -0.10882,
+   "web": "https://gymbox.com/gyms/farringdon/",
+   "addr": "12a Leather Lane, EC1N 7SS"
+  },
+  {
+   "brand": "Gymbox",
+   "sub": "Gym",
+   "aliases": [
+    "gymbox"
+   ],
+   "branch": "Finsbury Park",
+   "lat": 51.56449,
+   "lng": -0.10739,
+   "web": "https://gymbox.com/gyms/finsbury-park/",
+   "addr": "Unit 4, City North Place, N4 3HN"
+  },
+  {
+   "brand": "Gymbox",
+   "sub": "Gym",
+   "aliases": [
+    "gymbox"
+   ],
+   "branch": "Holborn",
+   "lat": 51.51784,
+   "lng": -0.11895,
+   "web": "https://gymbox.com/gyms/holborn/"
+  },
+  {
+   "brand": "Gymbox",
+   "sub": "Gym",
+   "aliases": [
+    "gymbox"
+   ],
+   "branch": "Old Street",
+   "lat": 51.52566,
+   "lng": -0.09049,
+   "web": "https://gymbox.com/gyms/old-street/",
+   "addr": "201A Old Street, EC1V 9NP"
+  },
+  {
+   "brand": "Gymbox",
+   "sub": "Gym",
+   "aliases": [
+    "gymbox"
+   ],
+   "branch": "Victoria",
+   "lat": 51.49685,
+   "lng": -0.13717,
+   "web": "https://gymbox.com/gyms/victoria/"
+  },
+  {
+   "brand": "Gymbox",
+   "sub": "Gym",
+   "aliases": [
+    "gymbox"
+   ],
+   "branch": "Westfield London",
+   "lat": 51.50746,
+   "lng": -0.22227,
+   "web": "https://gymbox.com/gyms/westfield-london/",
+   "addr": "Westfield London, Ariel Way, W12 7GF"
+  },
+  {
+   "brand": "Gymbox",
+   "sub": "Gym",
+   "aliases": [
+    "gymbox"
+   ],
+   "branch": "Westfield Stratford",
+   "lat": 51.54226,
+   "lng": -0.00762,
+   "web": "https://gymbox.com/gyms/westfield-stratford/"
   }
  ]
 }
