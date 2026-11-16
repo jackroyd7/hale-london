@@ -49,7 +49,7 @@ To add another chain, add its clubs to `chains.json` (brand, type, branch name, 
 ## Credits and data
 
 - Venue data © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors, available under the Open Database Licence (ODbL).
-- Club and studio lists for Third Space, Psycle, Barry's, 1Rebel and Gymbox from each brand's own website; locations from [postcodes.io](https://postcodes.io) (ONS open data).
+- Club and studio lists for Third Space, Psycle, Barry's, 1Rebel and Gymbox from each brand's own website, with opening hours for Third Space, Barry's and Psycle; locations from [postcodes.io](https://postcodes.io) (ONS open data).
 - Street maps from [OpenFreeMap](https://openfreemap.org) / [OpenMapTiles](https://www.openmaptiles.org/).
 - Borough boundaries simplified from London Datastore open data.
 - Map libraries in `vendor/`: [Leaflet](https://leafletjs.com), [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster), [MapLibre GL JS](https://maplibre.org) and [MapLibre GL Leaflet](https://github.com/maplibre/maplibre-gl-leaflet), each under its own licence.

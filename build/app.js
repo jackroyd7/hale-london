@@ -561,7 +561,9 @@ function renderBusiness(){
 function hoursTable(v){
   const now = londonNow();
   if (!v.hours) return v.ohRaw ? `<p class="raw">${esc(v.ohRaw)}</p><p class="muted small">Shown as recorded on OpenStreetMap.</p>` : `<p class="muted">No opening hours recorded. Check the venue's website.</p>`;
-  return `<table class="htable">${DAYS.map((d, i) => `<tr class="${i === now.day ? "today" : ""}"><td>${d}${i === now.day ? " (today)" : ""}</td><td>${(v.hours[i] || []).length ? v.hours[i].map(([o, c]) => o === "00:00" && c === "24:00" ? "24 hours" : o + "–" + c).join(", ") : "Closed"}</td></tr>`).join("")}</table>`;
+  const foot = (v.hoursNote ? `<p class="muted small">${esc(v.hoursNote)}</p>` : "")
+    + `<p class="muted small">${v.hoursSrc ? `Hours from ${esc(/['’]s$/.test(v.hoursSrc) ? v.hoursSrc : v.hoursSrc + "’s")} website.` : v.osm ? "Hours from OpenStreetMap. Check with the venue." : ""}</p>`;
+  return `<table class="htable">${DAYS.map((d, i) => `<tr class="${i === now.day ? "today" : ""}"><td>${d}${i === now.day ? " (today)" : ""}</td><td>${(v.hours[i] || []).length ? v.hours[i].map(([o, c]) => o === "00:00" && c === "24:00" ? "24 hours" : o + "–" + c).join(", ") : "Closed"}</td></tr>`).join("")}</table>` + foot;
 }
 function renderDetail(){
   const v = BY_ID[S.detail]; if (!v) return "";
@@ -597,7 +599,7 @@ function renderDetail(){
       ${S.myGuides.length ? `<div class="addlist">${S.myGuides.map(g => chip(esc(g.name), g.items.some(it => it.id === v.id), `data-toguide="${esc(g.id)}"`)).join("")}</div>` : ""}
       <form class="ask-row" id="quickGuide"><input id="quickGuideName" placeholder="New guide, e.g. Sunday reset" maxlength="80" aria-label="New guide name"><button class="btn">Create & add</button></form></section>
     <section class="d-sec"><h4>Nearby</h4><div class="list">${near.map(([x]) => card(x)).join("")}</div></section>
-    ${v.osm && !v.src ? `<p class="source">Listing from <a href="${esc(v.osm)}" target="_blank" rel="noopener">OpenStreetMap</a>. Something wrong? You can fix it there and it will flow through to Hale.</p>` : v.src ? `<p class="source">Club details from ${esc(v.src)}'s own website.</p>` : `<p class="source">Submitted through Hale, pending review.</p>`}
+    ${v.osm && !v.src ? `<p class="source">Listing from <a href="${esc(v.osm)}" target="_blank" rel="noopener">OpenStreetMap</a>. Something wrong? You can fix it there and it will flow through to Hale.</p>` : v.src ? `<p class="source">Club details from ${esc(/['’]s$/.test(v.src) ? v.src : v.src + "’s")} own website.</p>` : `<p class="source">Submitted through Hale, pending review.</p>`}
   </div>`;
 }
 let panelScroll = {};

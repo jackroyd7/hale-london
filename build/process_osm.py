@@ -275,6 +275,9 @@ if _os.path.exists(_chains_path):
                 venues.append(v)
             v.update({"name": brand, "branch": c["branch"], "web": c["web"], "chain": brand, "src": brand, "sub": sub_, "needs": SUB_NEEDS.get(sub_, v["needs"])})
             if c.get("addr"): v["addr"] = c["addr"]
+            if c.get("hours"):
+                v["hours"] = c["hours"]; v.pop("ohRaw", None); v["hoursSrc"] = brand
+                if c.get("hoursNote"): v["hoursNote"] = c["hoursNote"]
         removed = [v for v in cands if id(v) not in used]
         for v in removed: venues.remove(v)
         print(f"{brand}: {len(used)} matched in OSM, {len(clubs) - len(used)} added, {len(removed)} OSM entries not on the official list removed")
