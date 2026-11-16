@@ -208,7 +208,7 @@ function card(v, extra){
     <div class="meta">
       <span class="${st.open ? (st.soon ? "warn" : "ok") : "muted"}">${st.text}</span>
       ${w != null ? `<span>${walkText(w)}</span>` : `<span class="muted">${v.stWalk} min from ${esc(v.st)}</span>`}
-      ${v.web ? `<span class="muted">Website ✓</span>` : ""}
+      ${v.web ? `<a class="card-link" href="${esc(v.web)}" target="_blank" rel="noopener">Website ↗</a>` : ""}
     </div>
     <div class="pills">${badges(v)}</div>
   </article>`;
@@ -583,9 +583,9 @@ function renderDetail(){
     </div>
     <section class="d-sec"><h4>Details</h4>
       <dl class="facts">
-      ${v.addr ? `<dt>Address</dt><dd>${esc(v.addr)}</dd>` : ""}
-      ${v.web ? `<dt>Website</dt><dd class="wrap">${esc(v.web.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</dd>` : ""}
-      ${v.phone ? `<dt>Phone</dt><dd><span class="sel">${esc(v.phone)}</span> <button class="link" data-copyphone="${esc(v.phone)}">Copy</button></dd>` : ""}
+      ${v.addr ? `<dt>Address</dt><dd><a class="dlink" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(v.name + (v.branch ? " " + v.branch : "") + ", " + v.addr + ", London")}" target="_blank" rel="noopener">${esc(v.addr)}</a></dd>` : ""}
+      ${v.web ? `<dt>Website</dt><dd class="wrap"><a class="dlink" href="${esc(v.web)}" target="_blank" rel="noopener">${esc(v.web.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))} ↗</a></dd>` : ""}
+      ${v.phone ? `<dt>Phone</dt><dd>${SHARE ? `<a class="dlink" href="tel:${esc(v.phone.replace(/[^+\d]/g, ""))}">${esc(v.phone)}</a>` : `<span class="sel">${esc(v.phone)}</span>`} <button class="link" data-copyphone="${esc(v.phone)}">Copy</button></dd>` : ""}
       <dt>Nearest station</dt><dd>${esc(v.st)}, about ${v.stWalk} min walk</dd>
       ${w != null ? `<dt>From ${esc(originPoint().label)}</dt><dd>${walkText(w)}</dd>` : ""}
       <dt>Access</dt><dd>${v.wc === "yes" ? "Step-free (wheelchair accessible)" : v.wc === "limited" ? "Partly step-free" : v.wc === "no" ? "Not step-free" : "Not recorded. Check with the venue."}</dd>
